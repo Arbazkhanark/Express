@@ -1,5 +1,6 @@
 const express=require("express");
 
+/// install body-parser (npm i body-parser);
 const bodyParser=require("body-parser");
 
 const app=express();
