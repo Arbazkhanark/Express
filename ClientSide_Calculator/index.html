@@ -59,20 +59,22 @@
 <body>
     <div class="container">
         <h1>Calculator</h1>
-        <label for="num1">Number 1</label>
-        <input type="number" name="num1" id="num1" placeholder="Enter First Number" style="width: 150px;"> <br> <br>
-        <label for="num2">Number 2</label>
-        <input type="number" name="num2" id="num2" placeholder="Enter Second Number" style="width: 150px;">  
-        <br> <br>
+            <form action="/" method="post">  <!--- It will show an Error (Cannot POST)  ---->
+                <label for="num1">Number 1</label>
+                <input type="number" name="num1" id="num1" placeholder="Enter First Number" style="width: 150px;"> <br> <br>
+                <label for="num2">Number 2</label>
+                <input type="number" name="num2" id="num2" placeholder="Enter Second Number" style="width: 150px;">  
+                <br> <br>
 
-        <input class="btn" type="button" value="submit">
+                <button class="btn" type="submit" name="submit">Calculate</button>
+            </form>
 
-        <div class="ans"></div>
-        
-        <div class="foot">
-            <em>Develop By <b>Arbaaz</b>❤️</em>
+            <div class="ans"></div>
+            
+            <div class="foot">
+                <em>Develop By <b>Arbaaz</b>❤️</em>
+            </div>
         </div>
-    </div>
 
 
 </body>
