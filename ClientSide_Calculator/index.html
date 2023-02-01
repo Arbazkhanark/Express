@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client-Side Calculator</title>
+    <style>
+        *{
+            margin: 0;
+        }
+
+        .container{
+            margin: auto;
+            width: 50%;
+            background-color: bisque;
+            height: 670px;;
+            text-align: center;
+        }
+
+        .container h1{
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .container input{
+            margin-left: 20px;
+        }
+        
+        .btn{
+            background-color: rgb(253, 227, 218);
+            transition-duration: 0.4s;
+            border: 1px solid white ;
+            width: 90px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover{
+            background-color:burlywood;
+            color: white;
+            width: 120px;
+            padding: 7px;
+            border: 1px solid beige;
+        }
+        .ans{
+            background-color: wheat;
+            height: 120px;
+            padding: 10px;
+            margin: 40px;
+        }
+        .foot{
+            margin-top: 20px;
+            padding: 5px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Calculator</h1>
+        <label for="num1">Number 1</label>
+        <input type="number" name="num1" id="num1" placeholder="Enter First Number" style="width: 150px;"> <br> <br>
+        <label for="num2">Number 2</label>
+        <input type="number" name="num2" id="num2" placeholder="Enter Second Number" style="width: 150px;">  
+        <br> <br>
+
+        <input class="btn" type="button" value="submit">
+
+        <div class="ans"></div>
+        
+        <div class="foot">
+            <em>Develop By <b>Arbaaz</b>❤️</em>
+        </div>
+    </div>
+
+
+</body>
+</html>
