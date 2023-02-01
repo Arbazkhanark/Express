@@ -5,12 +5,14 @@ const express=require("express");
 
 const app=express();
 
-const Port=3000;
-app.listen(Port,function(){
-    console.log(`Server started on Port: ${Port}`);
+
+/// It will Solve the (cannot GET) Error,,,  Because It will get and send info.
+app.get("/",function(reqest,respose){
+    respose.send("<h1>Wellcome to my Server</h1>")
 });
 
+const Port=3000;
+app.listen(Port,function(){
+    console.log(`Server started on Port: ${Port}........`);
+});
 
-///// node server.js  ::--Server started on Port: 3000  (Output on terminal and Console of that Page).
-
-//Right now It will show Error on Port:3000 (Can't Get) :-- Because we are not sending to that page.
