@@ -1,0 +1,14 @@
+{
+  "name": "client-side--server",
+  "version": "1.0.0",
+  "description": "How Things Work in client-side By Sending and Receving Request",
+  "main": "calculator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arbaaz khan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
