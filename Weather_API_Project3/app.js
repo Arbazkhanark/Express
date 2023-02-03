@@ -1,8 +1,9 @@
 const express=require("express");
 const https=require("https");
-const bodyParser=require("body-parser"); //Install Body-Parser (npm i body parser)
-app.use(bodyParser);  // App use the Body parser
+const bodyParser=require("body-parser");// Install body-parser (npm i body-parser)
+
 const app=express();
+app.use(bodyParser.urlencoded({extended:true})); // IMPORTANT to app use body-parser
 
 /*
 Body-parser parses is an HTTP request body that usually helps when you need 
@@ -18,7 +19,7 @@ app.get("/",function(req,res){
 });
 
 app.post("/",function(req,res){
-    console.log("Post request recieved!!");
+    console.log(req.body.cityName); // It will Console the City Input feild("USER") With the help of bodyParser
 });
 
 
