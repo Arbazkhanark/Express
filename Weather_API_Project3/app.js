@@ -10,18 +10,22 @@ app.get("/",function(req,res){
     https.get(url,function(response){
         console.log(response.statusCode);
 
-
+        
         response.on("data",function(data){
             // console.log(data);   HexaCode ans
             const weatherData=JSON.parse(data)
             const temp=weatherData.main.temp
             const weatherDescription=weatherData.weather[0].description
-            const weatherReport= JSON.parse(data); //JSON.parse:-convert the data into JSON format 3D(3D JSON).:-  Multi-Lines
+            const weatherReport= JSON.parse(data); //JSON.parse:-convert the data into JSON format.
+            const icon=weatherData.weather[0].icon;//-------~||||| niche toh dekho(imgURL)
+            const imgURL="http://openweathermap.org/img/wn/"+ icon +"@2x.png";// img of Weather Condition
 
+            
             // important for use HTML tags inside res.write
             res.setHeader("Content-Type", "text/html"); /// IMPORTANT-> USE HTML TAGS
             res.write(`<p>The weather is currently ${weatherDescription}.</p>`); //res.write:- will help us to send multiple "res.write"=(inverse of "res.send"). 
             res.write(`<h1> The temperature in <i> Delhi,India </i>is ${temp} <i> degree </i> Celcius.</h1>`);
+            res.write(`<img src="${imgURL}">`); //Send images to the page.
             res.send()  // res.send :- will help us to send the request :: It should be one in app (inserve of res.write)
         });
     });
