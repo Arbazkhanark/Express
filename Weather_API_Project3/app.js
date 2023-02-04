@@ -3,15 +3,9 @@ const https=require("https");
 const bodyParser=require("body-parser");// Install body-parser (npm i body-parser)
 
 const app=express();
-app.use(bodyParser.urlencoded({extended:true})); // IMPORTANT to app use body-parser
+app.use(bodyParser.urlencoded({extended:true})); 
 
-/*
-Body-parser parses is an HTTP request body that usually helps when you need 
-to know more than just the URL being hit. Specifically 
-in the context of a POST, PATCH, or PUT HTTP request 
-where the information you want is contained in the body. 
-Using body-parser allows you to access req.
-*/
+
 
 
 app.get("/",function(req,res){
@@ -19,9 +13,7 @@ app.get("/",function(req,res){
 });
 
 app.post("/",function(req,res){
-    // console.log(req.body.cityName); // It will Console the City Input feild("USER") With the help of bodyParser
-                    //
-                    //
+
     const query=req.body.cityName;
     const key="a791b9299ff1bb320e9512883120b89b";
     const unit="metric";
@@ -36,17 +28,17 @@ app.post("/",function(req,res){
             const weatherData=JSON.parse(data)
             const temp=weatherData.main.temp
             const weatherDescription=weatherData.weather[0].description
-            const weatherReport= JSON.parse(data); //JSON.parse:-convert the data into JSON format.
-            const icon=weatherData.weather[0].icon;//-------~||||| niche toh dekho(imgURL)
-            const imgURL="http://openweathermap.org/img/wn/"+ icon +"@2x.png";// img of Weather Condition
+            const weatherReport= JSON.parse(data); 
+            const icon=weatherData.weather[0].icon;
+            const imgURL="http://openweathermap.org/img/wn/"+ icon +"@2x.png";
 
             
             // important for use HTML tags inside res.write
             res.setHeader("Content-Type", "text/html"); /// IMPORTANT-> USE HTML TAGS
-            res.write(`<p>The weather is currently ${weatherDescription}.</p>`); //res.write:- will help us to send multiple "res.write"=(inverse of "res.send"). 
+            res.write(`<p>The weather is currently <b> <em> ${weatherDescription}</em> <b>.</p>`);
             res.write(`<h1> The temperature in <i> ${query} </i>is ${temp} <i> degree </i> Celcius.</h1>`);
-            res.write(`<img src="${imgURL}">`); //Send images to the page.
-            res.send()  // res.send :- will help us to send the request :: It should be one in app (inserve of res.write)
+            res.write(`<img src="${imgURL}">`); 
+            res.send() 
         });
     });
 });
