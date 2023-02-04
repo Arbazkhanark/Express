@@ -5,14 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        h1{
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+        .container{
+            background-color: bisque;
+            width: 50%;
+            height: 630px;
+            margin: auto;
+            text-align: center;
+            /* padding: 20px; */
+        }
+        .form{
+            margin-top: 70px;
+            padding: 10px;
+        }
+        marquee{
+            color: rgb(226, 173, 111);
+        }
+        .footer{
+            position: relative;
+            top: 250px;
+            background-color: rgb(226, 173, 111);
+            height: 33%;
+        }
+        button{
+            margin-left: 18px;
+            width: 50px;
+            transition-duration: 0.3s;
+            border: 2px solid rgb(248, 221, 172);
+            background-color: rgb(241, 195, 138);
+            cursor: pointer;
+        }
+        button:hover{
+            width: 60px;
+            border: 1px solid white;
+            background-color: bisque;
+            padding: 2px;
+        }
+        input{
+            border: 1px solid rgb(248, 221, 172);
+            padding: 2px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Weather Report</h1>
-    <form action="/" method="post">
-        <label for="city">Enter City</label>
-        <input id="city" name="cityName" type="text" placeholder="Enter Your City Name">
-        <button type="submit">Go</button>
-    </form>
+    <div class="container">
+        <h1>Weather Report</h1>
+        <marquee behavior="" direction=""> ............................................Latest Weather Report............................................. <br> Wherever you go, no matter what the weather, always bring your own sunshine.</marquee>
+        <form class="form" action="/" method="post">
+            <label for="city">Enter City</label>
+            <input id="city" name="cityName" type="text" placeholder="Enter Your City Name">
+            <button type="submit">Go</button>
+        </form>
+        <div class="footer">
+            <em>Develop by Arbaz khan❤️</em>
+        </div>
+    </div>
+
 
 </body>
 </html>
